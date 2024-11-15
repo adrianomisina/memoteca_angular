@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 interface Pensamento {
   conteudo: string;
@@ -13,13 +13,12 @@ interface Pensamento {
 })
 export class PensamentoComponent implements OnInit {
 
-  pensamento: Pensamento = {
-    conteudo: 'I love Angular',
-    autoria: 'Dev',
-    modelo: 'modelo3'
+  @Input() pensamento: Pensamento = {
+    conteudo: '',
+    autoria: '',
+    modelo: ''
   }
 
-  listaPensamento: Pensamento[] = []
   constructor() { }
 
   ngOnInit(): void {
